@@ -1,0 +1,28 @@
+<div class="score-box">
+  Jó válaszok: <strong>{{ pointsGood }}</strong> |
+  Rossz válaszok: <strong>{{ pointsBad }}</strong><br />
+  <button class="reset" (click)="resetPoints()">Pontszámok nullázása</button>
+</div>
+
+<app-new-poll (pollCreated)="loadPolls()"></app-new-poll>
+
+<h2>Aktív kérdések</h2>
+
+<ng-container *ngFor="let poll of polls; let i = index">
+  <div class="panel">
+    <app-question
+      [question]="poll.question"
+      [options]="poll.options"
+      [correctAnswer]="poll.correctAnswer"
+      [showReset]="true"
+      (scoreUpdated)="updatePoints()"
+    ></app-question>
+
+    <app-results
+      [question]="poll.question"
+      [options]="poll.options"
+    ></app-results>
+
+    <button class="delete" (click)="deletePoll(i)">Kérdés törlése</button>
+  </div>
+</ng-container>

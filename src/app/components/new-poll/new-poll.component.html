@@ -1,0 +1,27 @@
+<div class="panel">
+  <h3>Új szavazás létrehozása</h3>
+
+  <label>
+    Kérdés:
+    <input [(ngModel)]="questionText" type="text" class="input" />
+  </label>
+  <br /><br />
+
+  <label>
+    Válaszlehetőségek (vesszővel elválasztva):
+    <input [(ngModel)]="optionsText" type="text" class="input" />
+  </label>
+  <br /><br />
+
+  <label>
+    Helyes válasz:
+    <input [(ngModel)]="correctAnswer" type="text" class="input" />
+  </label>
+  <br /><br />
+
+  <button class="vote" (click)="savePoll()">Mentés</button>
+
+  <div *ngIf="success" class="feedback success">
+    Szavazás elmentve!
+  </div>
+</div>

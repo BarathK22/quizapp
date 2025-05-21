@@ -1,0 +1,35 @@
+.option-list {
+  list-style: none;
+  padding: 0;
+}
+
+.option-list li {
+  margin-bottom: 0.5rem;
+}
+
+.vote {
+  background-color: #1dd1a1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.vote:disabled {
+  background-color: #b2bec3;
+  cursor: not-allowed;
+}
+
+.feedback {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.feedback.success {
+  color: #10ac84;
+}
+
+.feedback.error {
+  color: #ee5253;
+}

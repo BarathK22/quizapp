@@ -1,0 +1,14 @@
+.input {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
+.feedback.success {
+  margin-top: 10px;
+  color: #10ac84;
+  font-weight: bold;
+}

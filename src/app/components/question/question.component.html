@@ -1,0 +1,25 @@
+<h4>{{ question }}</h4>
+
+<ul class="option-list">
+  <li
+    *ngFor="let option of options"
+    (click)="vote(option)"
+    [class.voted]="hasVoted"
+  >
+    <button class="vote" [disabled]="hasVoted">
+      {{ option }}
+    </button>
+    <span *ngIf="hasVoted"> – {{ votes[option] || 0 }} szavazat</span>
+  </li>
+</ul>
+
+<div *ngIf="score === 'correct'" class="feedback success">
+  Helyes válasz!
+</div>
+<div *ngIf="score === 'incorrect'" class="feedback error">
+  Rossz válasz!
+</div>
+
+<button *ngIf="showReset" (click)="resetVotes()" class="reset">
+  Szavazatok törlése
+</button>

@@ -1,0 +1,6 @@
+<h4>Eredmények</h4>
+<ul class="result-list">
+  <li *ngFor="let option of options">
+    {{ option }} – <strong>{{ votes[option] || 0 }}</strong> szavazat
+  </li>
+</ul>
